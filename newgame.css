@@ -1,0 +1,262 @@
+/* @import url('/fonts/Helvetica\ Neu\ Bold.ttf'); */
+@import url('/fonts/HelveticaNeue.ttf');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'HelveticaNeue';
+}
+
+.game {
+  background-image: url('assets/Track.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* margin-left: 20%; */
+}
+
+.hide {
+  display: none;
+}
+
+.startScreen {
+  width: 23%;
+  border-radius: 10px;
+  height: 34px;
+  /* line-height: 20px; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  margin: auto;
+  background-color: rgb(0 19 117);
+  /* text-align: center; */
+  /* border-bottom: 2px solid rgb(132, 197, 197); */
+}
+
+.score,
+.highScore {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  text-align: center;
+  background-color: rgb(100, 224, 156);
+  width: 200px;
+  color: rgb(59, 40, 40);
+  line-height: 40px;
+  border-radius: 4px;
+  font-size: 1.2em;
+}
+
+.ClickToStart {
+  cursor: pointer;
+  position: absolute;
+  left: 14%;
+  top: 6px;
+  font-weight: 600;
+  color: #b3b3b3;
+}
+
+.gameArea {
+  height: 100vh;
+  /* width: 50%; */
+  /* position: relative; */
+  /* background-color: rgb(32, 32, 32); */
+  /* background: url('assets/Track.png'); */
+  /* overflow: hidden; */
+  /* border-left: 4px dashed white;
+  border-right: 4px dashed white; */
+  /* margin: auto; */
+}
+
+.car {
+  background: url('kart-blue.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 75px;
+  width: 50px;
+  position: absolute;
+  top: 290px;
+}
+
+.chipcar {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 75px;
+  width: 50px;
+  position: absolute;
+  top: 650px;
+}
+
+.Opponents {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 75px;
+  width: 50px;
+  position: absolute;
+  top: 490px;
+}
+
+.PotatoChips {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 75px;
+  width: 50px;
+  position: absolute;
+  top: 520px;
+}
+
+.roadLines {
+  height: 50px;
+  width: 4px;
+  background-color: #ffffff33;
+  position: absolute;
+  margin-left: 36%;
+}
+
+.roadLines_1 {
+  height: 50px;
+  width: 4px;
+  background-color: #ffffff33;
+  position: absolute;
+  margin-left: 60%;
+}
+
+.finishLine {
+  background: url('assets/finish\ line\ checkerboard.png');
+  height: 60px;
+  display: none;
+  /* background-color: white; */
+  position: relative;
+  z-index: 2;
+  /* margin-left: 60%; */
+}
+
+.image_footer {
+  background: url('assets/Footer.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.image_header {
+  background: url('assets/Header.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.left_stripe {
+  position: absolute;
+  left: 27px;
+  top: 79px;
+  z-index: 0;
+  width: 27px;
+}
+
+.right_stripe {
+  position: absolute;
+  right: 27px;
+  top: 79px;
+  z-index: 0;
+  width: 27px;
+}
+
+.chips-count-frame {
+  background: url('assets/Blue_Bar.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 10px;
+  left: 19%;
+  width: 250px;
+  z-index: 2;
+}
+
+.chips-count-gray {
+  background-size: 100% 100%;
+  position: absolute;
+  top: 15px;
+  width: 50px;
+  z-index: 2;
+}
+
+.chips-count-gray#chip-1 {
+  left: 22%;
+}
+
+.chips-count-gray#chip-2 {
+  left: 33%;
+}
+
+.chips-count-gray#chip-3 {
+  left: 44%;
+}
+
+.chips-count-gray#chip-4 {
+  left: 55%;
+}
+
+.chips-count-gray#chip-5 {
+  left: 66%;
+}
+
+.bottom_card {
+  background: url('assets/back\ controls.png');
+  position: relative;
+}
+
+
+.image_control {
+  position: absolute;
+  bottom: 2%;
+  width: 85%;
+  left: 10%;
+  z-index: 2;
+}
+
+.left_control {
+  position: absolute;
+  bottom: 6%;
+  width: 7%;
+  /* top: 0%; */
+  left: 25%;
+  z-index: 2;
+  margin: auto;
+  cursor: pointer;
+}
+
+.right_control {
+  position: absolute;
+  bottom: 6%;
+  width: 7%;
+  /* top: 0%; */
+  right: 20%;
+  z-index: 2;
+  margin: auto;
+  cursor: pointer;
+}
+
+.dot_control {
+  position: absolute;
+  bottom: 7%;
+  left: 35%;
+  width: 35%;
+  z-index: 2;
+  margin: auto;
+}
+
+.logo_control {
+  position: absolute;
+  bottom: 5%;
+  left: 35%;
+  width: 35%;
+  z-index: 2;
+  margin: auto;
+}
