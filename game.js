@@ -66,18 +66,18 @@ function Start() {
     gameArea.appendChild(Opponents);
     let random_image = randomColor();
     let lfSd = Math.floor(Math.random() * 300);
-    console.log("lfSd: ", lfSd)
-    if(lfSd < 70) {
+    const myArray = [77, 165, 258];  
+    const rndlfSd = myArray[Math.floor(Math.random() * myArray.length)]; 
+    console.log("rndlfSd: ", rndlfSd)
+    if(rndlfSd < 70) {
       Opponents.style.left = '70px'
     } else {
-      Opponents.style.left = lfSd > 250 ? 250 : lfSd + "px";
+      Opponents.style.left = rndlfSd > 250 ? 250 : rndlfSd + "px";
     }
     // Opponents.style.left = lfSd > 250 ? 250 : lfSd + "px";
     Opponents.style.background=`url(${random_image})`;
     Opponents.style.backgroundSize = '100% 100%';
-    function randomIntFromInterval(min, max) { // min and max included 
-      return Math.floor(Math.random() * (max - min + 1) + min)
-    }
+    
     
     const rndInt = randomIntFromInterval(1, 2)
     if (i === chipPosition) {
@@ -104,7 +104,13 @@ function Start() {
   finishLine.setAttribute('class', 'finishLine');
   finishLine.y = ((i) * -300);
   finishLine.style.top = finishLine.y+"px"
-  gameArea.appendChild(finishLine);
+  gameArea.appendChild(finishLine); 
+
+  let logoAfterFinish = document.createElement('div');
+  logoAfterFinish.setAttribute('class', 'logo-after-finish');
+  logoAfterFinish.y = ((i) * -200);
+  logoAfterFinish.style.top = logoAfterFinish.y+"px"
+  gameArea.appendChild(logoAfterFinish);
 
   let chipcar = document.createElement('div');
   chipcar.setAttribute('class', 'chipcar');
@@ -112,7 +118,9 @@ function Start() {
   player.x = chipcar.offsetLeft;
   player.y = chipcar.offsetTop;
 }
-
+function randomIntFromInterval(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 function randomColor(){
   const car_png = [ 'kart-red.png', 'kart-yellow.png', 'kart-red.png', 'kart-yellow.png', 'kart-red.png', 'kart-yellow.png' ]
   function c(min, max) {
@@ -192,14 +200,17 @@ function moveLines() {
 
 function finalLine() {
   finishLine = document.querySelectorAll('.finishLine');
+  logoAfterFinish = document.querySelectorAll('.logo-after-finish');
   let finalTop;
   let car = document.querySelector('.car');
+  console.log(logoAfterFinish);
   finishLine.forEach(function (item) {
     if(isCollide(car, item)) {
       endGame()
     }
     item.style.display = 'block';
     item.style.top = "0px";
+    
 
     if (item.y >= 700)
       item.y -= 700;
@@ -207,7 +218,8 @@ function finalLine() {
       item.style.top = item.y + "px";
       finalTop = item.y
     }
-  )
+    )
+   
 
   // Hide the Cars after touching the FInish Line
   let Opponents = document.querySelectorAll('.Opponents');
@@ -235,15 +247,16 @@ function moveOpponents(car, chips) {
     }
     if (item.y >= 750) {
       item.y -= 900;
-      let lfSd = Math.floor(Math.random() * 300);
-      if(lfSd < 70) {
-        lfSd = 70
+      const myArray = [77, 165, 258];  
+      let rndlfSd = myArray[Math.floor(Math.random() * myArray.length)]; 
+      if(rndlfSd < 70) {
+        rndlfSd = 70
       } else {
-        lfSd =  lfSd > 250 ? 250 : lfSd
+        rndlfSd =  rndlfSd > 258 ? 258 : rndlfSd
       }
-      item.style.left = lfSd + "px";
-      console.log("Left Posi: ", lfSd)
-      carLeftPosition = lfSd
+      item.style.left = rndlfSd + "px";
+      console.log("Left Posi: ", rndlfSd)
+      carLeftPosition = rndlfSd
     }
     // console.log("Left Position: ", carLeftPosition)
     item.y += player.speed;
@@ -268,7 +281,7 @@ function moveChips(chips) {
           
           item.style.display = 'block'
         }
-      }, 5000)
+      }, 3000)
 
     }
     if (item.y >= 750) {

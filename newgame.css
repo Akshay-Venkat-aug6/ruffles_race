@@ -1,12 +1,29 @@
-/* @import url('/fonts/Helvetica\ Neu\ Bold.ttf'); */
-@import url('/fonts/HelveticaNeue.ttf');
+/* @font-face{
+  font-family: 'MyWebFont';
+  src: url('WebFont.eot');
+  src: url('WebFont.eot?#iefix') format('embedded-opentype'),
+  url('WebFont.woff') format('woff'),
+  url('WebFont.ttf') format('truetype'),
+  url('WebFont.svg#webfont') format('svg');
+  } */
+  @font-face{
+    font-family: 'MyWebFont';
+    src: url('WebFont.eot');
+    src: url('WebFont.eot?#iefix') format('embedded-opentype'),
+    url('WebFont.woff') format('woff'),
+    url('WebFont.ttf') format('truetype'),
+    url('WebFont.svg#webfont') format('svg');
+    }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'HelveticaNeue';
+  font-family: 'MyWebFont1', Arial, sans-serif;
 }
 
+body {
+  overflow: hidden;
+}
 .game {
   background-image: url('assets/Track.png');
   background-repeat: no-repeat;
@@ -51,8 +68,8 @@
 .ClickToStart {
   cursor: pointer;
   position: absolute;
-  left: 14%;
-  top: 6px;
+  left: 8px;
+  top: 8px;
   font-weight: 600;
   color: #b3b3b3;
 }
@@ -76,7 +93,8 @@
   height: 75px;
   width: 50px;
   position: absolute;
-  top: 290px;
+  top: 77% !important;
+  scale: 140%;
 }
 
 .chipcar {
@@ -94,7 +112,9 @@
   height: 75px;
   width: 50px;
   position: absolute;
-  top: 490px;
+  top: 490px;  
+  z-index: 1;
+  scale: 140%;
 }
 
 .PotatoChips {
@@ -104,6 +124,7 @@
   width: 50px;
   position: absolute;
   top: 520px;
+  scale: 140%;
 }
 
 .roadLines {
@@ -129,7 +150,21 @@
   /* background-color: white; */
   position: relative;
   z-index: 2;
+  width: 69%;
+  margin-left: 15%;
   /* margin-left: 60%; */
+}
+.logo-after-finish {
+  background: url(assets/logo-ruffles-finish.png);
+  height: 100%;
+  /* display: none; */
+  background-repeat: no-repeat;
+  /* background-color: white; */
+  position: relative;
+  z-index: 2;
+  scale: 1;
+  width: 84%;
+  margin-left: 16%;
 }
 
 .image_footer {
